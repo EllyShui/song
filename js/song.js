@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
     
 
-    // .is tool,likes tab_head:click
+    // .tab_head:click
     let tab_head = document.querySelectorAll('.is article:nth-of-type(2) .tab_head'),
         tab = document.querySelectorAll('.is article:nth-of-type(2)>div');
     
@@ -46,38 +46,37 @@ document.addEventListener("DOMContentLoaded", function(){
         });
     }
     
-    // .is about dots
+
+    // .is about scroll > dots
     document.querySelector('.qna').addEventListener('scroll',function(){
-        let qna = document.querySelector('.qna').offsetTop,
-            qna_sT = document.querySelector('.qna').scrollTop,
+        let qna = document.querySelector('.qna').offsetTop, //고정값
+            qna_sT = document.querySelector('.qna').scrollTop, //변하는값
             qst = document.querySelectorAll('.qst'),
             top = [];
         for(let idx=0;idx<qst.length;idx++){ //각 qst높이값 저장
             top[idx] = qst[idx].offsetTop - qna;
         }
-
         for(let i=0;i<qst.length;i++){ // top > bluelight
             if(qna_sT >= top[i]){
                 document.querySelector('.bluelight').classList.remove('bluelight');
                 document.querySelector('.dots span:nth-child('+(i+1)+')').classList.add('bluelight');
             }
         }
-        console.log(qna_sT, qna);
+        // console.log(qna_sT, qna);
     });
-    // .is about scroll > dots
+    // .is about dots click
     let dots = document.querySelectorAll('.dots span');
     for(let i=0;i<dots.length;i++){
         dots[i].addEventListener('click',function(){
-            let qna = document.querySelector('.qna').offsetTop,
-                qna_sT = document.querySelector('.qna').scrollTop,
+            let qna = document.querySelector('.qna').offsetTop, //고정값
+                qna_sT = document.querySelector('.qna').scrollTop, //변하는값
                 qst = document.querySelectorAll('.qst'),
                 top = [];
             for(let idx=0;idx<qst.length;idx++){ //각 qst높이값 저장
                 top[idx] = qst[idx].offsetTop - qna;
             }
-            //i 이용
-
-
+            //이동
+            document.querySelector('.qna').scrollTo({left:0,top:top[i],behavior:'smooth'});
         });
     }
 

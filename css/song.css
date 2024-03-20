@@ -72,9 +72,8 @@ nav li{height:50px;
 .wrap{width:calc(100% - 120px);
     min-width:1320px; max-width:2300px;
     margin-left:120px;}
-section{height:100vh;}
+section{height:100vh; overflow:hidden;}
 /*---------- section:is ----------*/
-.is{height:calc(100vh - 25px);}
 /* display */
 .display{width:70%;
     height:45px;
@@ -219,7 +218,8 @@ table{width:100%;
 td{vertical-align:text-top;}
 td:nth-child(1){width:27px;
     font-size:14px;}
-td:nth-child(2){position:relative;}
+td:nth-child(2){position:relative;
+    cursor:pointer;}
 td:nth-child(3){width:30px;}
 td:nth-child(4){width:130px;}
 .open{display:inline-block;
@@ -228,11 +228,10 @@ td:nth-child(4){width:130px;}
     margin-bottom:5px;
     border-right:1px solid #dddddd;
     border-bottom:1px solid #dddddd;
-    rotate: 45deg;
-    cursor:pointer;}
-.open:hover{border-width:2px;
+    rotate: 45deg;}
+td:nth-child(2):hover .open{border-width:2px;
     padding:4px;}
-.open:hover~.more{display:block;}
+td:nth-child(2):hover .more{display:block;}
 .more{position:absolute; top:110%; left:0;
     border-radius:8px;
     padding:10px 20px;
@@ -261,7 +260,7 @@ tr:nth-child(3) .more{width:306px;}
 /*---------- section:work ----------*/
 .work{position:relative;}
 .worklist{width:120px;
-    margin:0 60px;
+    margin:0 50px;
     position:absolute;
     top:50%; left:0;
     transform:translate(0,-50%);
@@ -279,18 +278,27 @@ z-index:2;}
     background-size:cover;}
 .worklist li:nth-child(3){background:url("../img/work/nasa/nasa_thumb.png") no-repeat;
     background-size:cover;}
-.workli_on{border:1px solid #da70d6;}
+.workli_on{border:1px solid #da70d6;
+    color:#da70d6;}
 /* article 공통 */
 .work article{height:100%;
-    padding-bottom:140px;
+    /* padding-bottom:140px; */
     display:flex;
     justify-content:center;
-    align-items:end;
-    gap:60px;
+    /* align-items:end; */
+    align-items:center;
+    gap:50px;
     position:absolute;}
 .work .work_on{z-index:1;}
+.work_on .rwd{animation:fadein 1s ease-in-out both;}
+.work_on .description{animation:fadein 1s ease-in-out both;
+    animation-delay:0.3s;}
+@keyframes fadein{
+    0%{opacity:0;}
+    80%{opacity:1;}
+}
 .rwd{height:fit-content;
-    margin-left:240px;
+    margin-left:120px;
     position:relative;}
 .rwd div{border-width:20px 5px;
     border-radius:10px;
@@ -298,7 +306,8 @@ z-index:2;}
     border-color:#000000;
     background-color:black;
     overflow-x:scroll;
-    scrollbar-width:none;}
+    scrollbar-width:none;
+    overscroll-behavior:contain;}
 .rwd div::-webkit-scrollbar{display: none;}/*safari*/
 .pc{width:700px; height:480px;
     border-width:6px;}
@@ -322,6 +331,8 @@ z-index:2;}
     border-radius:50px;
     background-color:#292929;
     overflow:hidden;}
+.btn:hover{background-color:#0078d4;
+    box-shadow:inset 0 0 3px #003156;}
 .btn a{height:100%;
     padding:13px 23px;
     font-size:14px;
@@ -366,3 +377,4 @@ z-index:2;}
 
 
 /*---------- section:ing ----------*/
+.ing{background-color:blue;}
