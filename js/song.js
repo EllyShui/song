@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function(){
     
 
     // .tab_head:click
-    let tab_head = document.querySelectorAll('.is article:nth-of-type(2) .tab_head'),
-        tab = document.querySelectorAll('.is article:nth-of-type(2)>div');
+    let tab_head = document.querySelectorAll('.is article:nth-of-type(3) .tab_head'),
+        tab = document.querySelectorAll('.is article:nth-of-type(3)>div');
     
     for(var i=0;i<tab_head.length;i++){
         tab_head[i].addEventListener('click',function(){
