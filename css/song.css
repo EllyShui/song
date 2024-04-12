@@ -310,15 +310,20 @@ z-index:2;}
     gap:40px;
     position:absolute;}
 .work .work_on{z-index:1;}
-.work_on .rwd{animation:fadeinup 1s ease-out both;
+.work_on .rwd{animation:fadeinup 1.2s ease-out both;
     animation-delay:0.1s;}
-.work_on .description{animation:fadeinup 1s ease-out both;
-    animation-delay:0.4s;}
+.work_on .description{animation:fadein 1.4s ease-out both;
+    animation-delay:0.5s;
+}
 @keyframes fadeinup{
     0%{opacity:0;
         transform:translateY(20%);}
     70%{transform:translateY(0);}
     100%{opacity:1;}
+}
+@keyframes fadein{
+    0%{opacity:0;}
+    80%{opacity:1;}
 }
 .rwd{height:fit-content;
     margin-left:130px;
