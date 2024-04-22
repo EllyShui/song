@@ -74,6 +74,8 @@ nav li{height:50px;
     max-width:2300px;
     margin-left:120px;}
 section{height:100vh; overflow:hidden;}
+
+
 /*---------- section:is ----------*/
 /* display */
 .display{width:70%;
@@ -270,7 +272,7 @@ tr:nth-child(3) .more{width:343px;}
     clear:both;
     line-height:40px;
     text-align:center;}
-.hash span{margin-right:20px;}
+.hash span{margin-right:30px;}
 .hash span:nth-child(2){color:#ffd10c;}
 .hash span:nth-child(3){color:#6a9955;}
 .hash span:nth-child(4){color:#169fff;}
@@ -279,25 +281,32 @@ tr:nth-child(3) .more{width:343px;}
 
 /*---------- section:work ----------*/
 .work{position:relative;}
-.worklist{margin-left:50px;
-    position:absolute;
-    top:152px; left:0;
-z-index:2;}
-.worklist li{width:120px; height:70px;
-    margin-bottom:40px;
-    border:1px solid #393939;
+    /* .ing .list 공통 */
+    .list{margin-left:50px;
+        display:flex;
+        gap:40px;
+        position:absolute;
+        top:45px; left:0;
+    z-index:2;}
+    .list li{width:120px;
+        border:1px solid #393939;
+        font-family:'Consolas bold';
+        box-shadow:0 0 10px #292929;
+        cursor:pointer;}
+/* .worklist */
+.worklist li{height:70px;
     padding:10px;
-    line-height:80px;
-    font-family:'Consolas bold';
-    box-shadow:0 0 10px #292929;
-    cursor:pointer;}
+    line-height:80px;}
 .worklist li:nth-child(1){background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%), url("../img/work/nasa/nasa_thumb.png");
     background-repeat:no-repeat;
     background-size:cover;}
 .worklist li:nth-child(2){background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%), url("../img/work/stanley/stanley_thumb.png");
     background-repeat:no-repeat;
     background-size:cover;}
-.worklist li:nth-child(3){background-color:#000000;}
+.worklist li:nth-child(3){background:linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%), url("../img/work/landing/landing_thumb.png");
+    background-repeat:no-repeat;
+    background-size:contain;
+    background-position:center;}
 .worklist .workli_on{border:1px solid #da70d6;
     color:#da70d6;}
 /* article 공통 */
@@ -343,9 +352,7 @@ z-index:2;}
     transition:1.6s;}
 .tablet, .mobile{position:absolute;
     bottom:-60px;}
-.description{width:420px;
-/* background-color:olive; */
-}
+.description{width:420px;}
 .description h3{font-family: "Gowun Batang", serif;
     font-size:32px;}
 .description h3 span{font-weight:700;}
@@ -409,7 +416,46 @@ z-index:2;}
 .stanley .pc:hover img{margin-top:-162px;}
 .stanley .tablet:hover img{margin-top:-137px;}
 .stanley .mobile:hover img{margin-top:-167px;}
+/* landing */
+.landing{background:linear-gradient(to top, rgba(16,16,16,1) 40%, rgba(16,16,16,0) 90%),
+    linear-gradient(to right, rgba(16,16,16,1) 10%, rgba(16,16,16,0) 40%);
+    background-color:#101010;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;}
+.landing .color li:nth-child(1){background-color:#1f1f1f;}
+.landing .color li:nth-child(2){background-color:#0078d4;}
+.landing .color li:nth-child(3){background-color:#da70d6;}
+.landing .pc:hover img{margin-top:-948px;}
 
 
 /*---------- section:ing ----------*/
-.ing{background-color:blue;}
+.ing{position:relative;}
+/* list */
+.inglist li{height:40px;
+    border-radius:50px;
+    line-height:40px;
+    text-align:center;
+    background-color:#292929;}
+.inglist .ingli_on{border:1px solid #da70d6;
+    color:#da70d6;}
+.ing article{height:calc(100% - 152px);
+    margin:0 45px;
+    margin-top:152px;
+    overflow:hidden;}
+.ing article::after{display:block; content:'';
+    width:100%; height:100px;
+    background:linear-gradient(to top, #101010 45px, rgba(0,0,0,0) 100px);
+    position:absolute;
+    left:0; bottom:0;}
+.ing div{margin-bottom:60px;}
+
+
+/*---------- width : 1440-1920 ----------*/
+@media only screen and (min-width:1920px){
+    /* section:work */
+    .worklist{height:100%;
+        flex-direction:column;
+        justify-content: center;
+        top:0;}
+}
