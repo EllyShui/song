@@ -430,6 +430,13 @@ tr:nth-child(3) .more{width:343px;}
 /*---------- section:ing ----------*/
 .ing{position:relative;}
 /* list */
+.inglist::before{display:inline;content:'CLICK !';
+    position:absolute; top:-20px; left:-18px;
+    rotate:-15deg;
+    font-size:12px;
+    letter-spacing:1px;
+    text-align:center;
+    color:#da70d6;}
 .inglist li{height:40px;
     border-radius:50px;
     line-height:40px;
